@@ -25,8 +25,9 @@ opcion = st.selectbox("selecciona una opcion:" , ["Agregar usuarios","Mostrar us
 if opcion == "Agregar usuarios":
     nombre = st.text_input('nombre del usuario')
     if st.button("Agregar", type='primary'):
-        agregar_usuario(nombre)
-    else:
-        st.error("No puede estar vacio")
+        if nombre:
+            agregar_usuario(nombre)
+        else:
+            st.error("No puede estar vacio")
 elif opcion == "Mostrar usuarios":
     mostrar_usuario ()
