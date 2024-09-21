@@ -21,7 +21,7 @@ def mostrar_usuario():
 st.title("Gestion de usuarios")
 
 #* Opciones
-opcion = st.selectbox("selecciona una opcion:" , ["Agregar usuarios","Mostrar usuarios"])
+opcion = st.selectbox("selecciona una opcion:" , "Agregar usuarios","Mostrar usuarios")
 if opcion == "Agregar usuarios":
     nombre = st.text_input('nombre del usuario')
     if st.button("Agregar", type='primary'):
