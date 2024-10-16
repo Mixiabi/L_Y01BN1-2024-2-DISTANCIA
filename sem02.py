@@ -106,3 +106,4 @@ elif opcion == "Mostrar usuarios":
 elif opcion == "Eliminar usuario":
     st.header("Eliminado usuarios de la lista")
     eliminar_usuario()
+    
