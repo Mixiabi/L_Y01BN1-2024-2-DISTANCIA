@@ -1,6 +1,3 @@
-import re
-import select
-from unittest.runner import _ResultClassType
 import streamlit as st
 
 def calcular (operacion,num1,num2):
@@ -25,11 +22,13 @@ def calcular (operacion,num1,num2):
         return num1/num2
     else:
         return "Operacion no valida"
+    
 def main():
     st.title('calculadora basica')
     st.write('selecciones una operacion e ingrese los numeros')
-    operacionLista = ['Suma','Resta','Multiplicacion','Division']
-    operacion = st.selectbox(operacionLista)
+    operacion = ['Suma','Resta','Multiplicacion','Division']
+    # Corrección: Asignamos el valor seleccionado a `operacion`
+    operacion = st.selectbox('Operación', ['Suma', 'Resta', 'Multiplicacion', 'Division'])
     
     #? ENTRADAS PARA NUMERO
     num1 = st.text_input('Numero 1')
@@ -37,5 +36,6 @@ def main():
     if st.button('calcular'):
         resultado = calcular(operacion, num1,num2)
         st.write('**Resultado:**',resultado)
+        
 if __name__ == "__main__":
     main()
